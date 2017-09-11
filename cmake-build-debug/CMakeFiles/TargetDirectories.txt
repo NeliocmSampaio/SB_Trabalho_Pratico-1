@@ -1,0 +1,3 @@
+/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles/untitled2.dir
