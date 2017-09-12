@@ -35,6 +35,8 @@ void print_memory_contents()
 int run_program(int num_bytes)
 {
     int pc = 0;
+    int ac = 0;
+    int in, out;
     unsigned char reg[16], fb, sb;
 
     while(pc <= (num_bytes / 2))
@@ -45,13 +47,18 @@ int run_program(int num_bytes)
 
         switch (fb >> 4)
         {
-            case 0: reg[fb & 0x0f] = memory[sb]; break;
-            case 1: memory[sb] = reg[fb & 0x0f]; break;
-            case 2: memory[reg[fb & 0x0f]] = reg[sb >> 4]; break;
-            case 3: reg[fb & 0x0f] = sb; break;
-            case 4: reg[fb & 0x0f] += reg[sb >> 4]; break;
-            case 5: reg[fb & 0x0f] -= reg[sb >> 4]; break;
-            case 6: pc += sb; break;
+            case 0: ac = memory[sb]; break;
+            case 1: memory[sb] = ac; break;
+            case 2: ac = ac + memory[sb]; break;
+            case 3: ac = ac - memory[sb]; break;
+            case 4: scanf("%d", &in); break;
+            case 5: printf("%d", memory[sb]); break;
+            case 6: pc = memory[sb]; break;
+            case 7: if(ac>0) pc = memory[sb]; break;
+            case 8: if(ac<0) pc = memory[sb]; break;
+            case 9: if(ac==0) pc = memory[sb]; break;
+            case 10: return 0; break;
+            case 11: pc += memory[sb]; break;
             default: return -1;
         }//switch
 
