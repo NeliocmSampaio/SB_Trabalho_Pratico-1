@@ -106,13 +106,14 @@ int main(int argc, char *argv[]) {
         return -1;
     }//if
 
-    int a = sizeof(prog);
+    //int a = sizeof(prog);
 
-    //int t = fread(program, 1, sizeof(program), f);
+    int t = fread(program, 1, sizeof(program), f);
+    printf("%d\n", t);
 
     //Lê o arquivo inteiro no vetor de instruções. Não passa no if se a
     //leitura tiver tamanho 0.
-    if( run_program2(fread(program, 1, sizeof(program), f))==0)
+    if( run_program2(t)==0 )
     {
         print_memory_contents();
         return 0;
