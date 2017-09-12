@@ -42,6 +42,7 @@ int run_program(int num_bytes)
         fb = program[pc].first_byte;
         sb = program[pc].second_byte;
         pc++;
+
         switch (fb >> 4)
         {
             case 0: reg[fb & 0x0f] = memory[sb]; break;
@@ -53,6 +54,18 @@ int run_program(int num_bytes)
             case 6: pc += sb; break;
             default: return -1;
         }//switch
+
+        /*switch (fb >> 4)
+        {
+            case 0: reg[fb & 0x0f] = memory[sb]; break;
+            case 1: memory[sb] = reg[fb & 0x0f]; break;
+            case 2: memory[reg[fb & 0x0f]] = reg[sb >> 4]; break;
+            case 3: reg[fb & 0x0f] = sb; break;
+            case 4: reg[fb & 0x0f] += reg[sb >> 4]; break;
+            case 5: reg[fb & 0x0f] -= reg[sb >> 4]; break;
+            case 6: pc += sb; break;
+            default: return -1;
+        }//switch*/
     }//while
 
     return 0;
