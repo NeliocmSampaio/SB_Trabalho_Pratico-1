@@ -123,33 +123,6 @@ untitled2/fast:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/build
 .PHONY : untitled2/fast
 
-binary_writer.o: binary_writer.c.o
-
-.PHONY : binary_writer.o
-
-# target to build an object file
-binary_writer.c.o:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/binary_writer.c.o
-.PHONY : binary_writer.c.o
-
-binary_writer.i: binary_writer.c.i
-
-.PHONY : binary_writer.i
-
-# target to preprocess a source file
-binary_writer.c.i:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/binary_writer.c.i
-.PHONY : binary_writer.c.i
-
-binary_writer.s: binary_writer.c.s
-
-.PHONY : binary_writer.s
-
-# target to generate assembly for a file
-binary_writer.c.s:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/binary_writer.c.s
-.PHONY : binary_writer.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -186,9 +159,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... untitled2"
-	@echo "... binary_writer.o"
-	@echo "... binary_writer.i"
-	@echo "... binary_writer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

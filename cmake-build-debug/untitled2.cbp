@@ -84,9 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/binary_writer.c">
-			<Option target="untitled2"/>
-		</Unit>
 		<Unit filename="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/main.c">
 			<Option target="untitled2"/>
 		</Unit>

@@ -3,5 +3,5 @@ project(untitled2)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SOURCE_FILES main.c binary_writer.c)
+set(SOURCE_FILES main.c)
 add_executable(untitled2 ${SOURCE_FILES})
