@@ -11,9 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cf3ecee-1657-4b5a-b76e-c257f16206fa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="7cf3ecee-1657-4b5a-b76e-c257f16206fa" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +28,8 @@
           <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                <state relative-caret-position="28">
+                  <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
                   <folding>
                     <element signature="e#720#2087#0" expanded="false" />
                     <element signature="e#3292#4122#0" expanded="false" />
@@ -50,8 +48,8 @@
               <file leaf-file-name="entrada" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/entrada">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="72">
-                      <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+                    <state relative-caret-position="90">
+                      <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
                       <folding />
                     </state>
                   </provider>
@@ -65,7 +63,7 @@
                 <entry file="file://$PROJECT_DIR$/Anotacoes">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="198">
-                      <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+                      <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
                       <folding />
                     </state>
                   </provider>
@@ -386,12 +384,12 @@
       <workItem from="1505169935744" duration="7352000" />
       <workItem from="1505213393785" duration="15043000" />
       <workItem from="1505389823039" duration="8705000" />
-      <workItem from="1505427996331" duration="1199000" />
+      <workItem from="1505427996331" duration="1862000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40430000" />
+    <option name="totallyTimeSpent" value="41093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="62" y="-11" width="1859" height="1092" extended-state="6" />
@@ -813,14 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Anotacoes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/SRC">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -828,23 +818,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/entrada">
+    <entry file="file://$PROJECT_DIR$/Anotacoes">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        <state relative-caret-position="198">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="28">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="e#720#2087#0" expanded="false" />
             <element signature="e#3292#4122#0" expanded="false" />
             <element signature="e#4629#4761#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entrada">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
