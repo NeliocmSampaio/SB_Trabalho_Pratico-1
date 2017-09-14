@@ -94,11 +94,6 @@ int run_program2(int num_bytes)
         byte2bits(program[pc].second_byte, sb1);
 
         byte2bits(fb & 0x0f, aux1);
-        //printf("fb: %s; fb & 0f: %s\n", fb1, aux1);
-        //printf("%d %c\n", fb>>4, fb>>4);
-
-        //strcpy(fb, program[pc].first_byte);
-        //strcpy(sb, program[pc].second_byte);
         pc++;
 
         switch (fb >> 4)
@@ -114,6 +109,8 @@ int run_program2(int num_bytes)
             case 9: if(ac<0) pc = memory[sb]; break;
             case 10: if(ac==0) pc = memory[sb]; break;
             case 11: return 0; break;
+            case 12: memory[ac] = sb; break;    //store IMM
+            case 13: ac = sb; break;            //load IMM
             default: return -1;
         }//switch
 
@@ -145,7 +142,7 @@ int main(int argc, char *argv[]) {
     //int a = sizeof(prog);
 
     int t = fread(program, 1, sizeof(program), f);
-    printf("%d\n", t);
+    //printf("%d\n", t);
 
     //Lê o arquivo inteiro no vetor de instruções. Não passa no if se a
     //leitura tiver tamanho 0.
