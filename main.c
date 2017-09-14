@@ -17,7 +17,7 @@ typedef struct {
 
 instruction     program[TAM_INST_MEM];  //instruction memory
 inst            prog[TAM_INST_MEM];
-unsigned char   memory [TAM_DATA_MEM]; //data memory
+int   memory [TAM_DATA_MEM]; //data memory
 
 //Funções auxiliares
 void byte2bits(char c, char *s);        //conversão de char para binario
@@ -85,7 +85,7 @@ int run_program2(int num_bytes)
     char fb1[8], sb1[8];
     char aux1[8], aux2[8];
 
-    while(pc <= (num_bytes / 2))
+    while(pc < (num_bytes / 2))
     {
         fb = program[pc].first_byte;
         sb = program[pc].second_byte;
@@ -107,8 +107,8 @@ int run_program2(int num_bytes)
             case 2: memory[sb] = ac; break;
             case 3: ac = ac + memory[sb]; break;
             case 4: ac = ac - memory[sb]; break;
-            case 5: scanf("%d", memory[sb]); break;
-            case 6: printf("%d", memory[sb]); break;
+            case 5: scanf("%d", &memory[sb]); setbuf(stdin, NULL); break;
+            case 6: printf("%d\n", memory[sb]); break;
             case 7: pc = memory[sb]; break;
             case 8: if(ac>0) pc = memory[sb]; break;
             case 9: if(ac<0) pc = memory[sb]; break;
@@ -151,7 +151,7 @@ int main(int argc, char *argv[]) {
     //leitura tiver tamanho 0.
     if( run_program2(t)==0 )
     {
-        print_memory_contents();
+        //print_memory_contents();
         return 0;
     }else return -1;
 
