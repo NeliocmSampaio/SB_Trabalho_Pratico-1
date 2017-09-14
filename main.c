@@ -139,8 +139,6 @@ int main(int argc, char *argv[]) {
         return -1;
     }//if
 
-    //int a = sizeof(prog);
-
     int t = fread(program, 1, sizeof(program), f);
     //printf("%d\n", t);
 
