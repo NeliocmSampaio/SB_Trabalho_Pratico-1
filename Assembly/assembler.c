@@ -7,7 +7,7 @@
 #include <string.h>
 
 typedef struct instruction{
-    char label[2], op_code[4], end[5];
+    char label[1], op_code[4], end[5];
 }instruction;
 
 typedef struct ref{
@@ -23,12 +23,23 @@ ref ref_table[250];
 int ref_pc;
 
 void tok_instruction(char *buffer);
-void save_inst(char **buf, int t);
 void save_ref(char **buf, int t);
 void str_clean(char *str);
 
 int search_ref_table(char *c)
 {
+    int i = 0;
+    while(i<ref_pc)
+    {
+        //strcmp(ref_table[i].label, c)
+        if(ref_table[i].label[0] == c[0])
+        {
+            return ref_table[i].end;
+        }//if
+        i++;
+    }//while
+
+    //puts("Referencia nao encontrada!");
     return 0;
 }//search_ref_table()
 
@@ -67,24 +78,37 @@ char* code(char *op)
     }else if(!strcmp(op, "HLT"))
     {
         return "11";
-    }//else
+    }else return "00";
 }//code()
 
 char* refr(char *r)
 {
-    return "a";
+    char *str = (char*) malloc(sizeof(str)*5);
+    sprintf(str, "%2d", search_ref_table(r));
+
+    int i=0;
+    while(i<5 && str[i]!='\0')
+    {
+        if(str[i]==' ') str[i] = '0';
+        i++;
+    }//while
+
+    return str;
 }//refr()
 
 void write_on_file(FILE *f)
 {
     int i;
     int tam_prog = pc;
+    char *str;
     pc = 0;
 
     for(int i=0; i<tam_prog; i++)
     {
         fprintf(f, "%s ", code(program[i].op_code));
-        fprintf(f, "%s", refr(program[i].end));
+        str = refr(program[i].end);
+        fprintf(f, "%s\n", str);
+        free(str);
     }//for
 }//write_on_file()
 
@@ -121,10 +145,15 @@ int main(int argc, char *argv[])
     fclose(g);
 }//main()
 
-void save_inst(char **buf, int t)
+int save_inst(char **buf, int t)
 {
+    if(t==1 && !strcmp(buf[0], "END"))
+    {
+        return 0;
+    }//if
+
     switch (t){
-        case 0: return; break;
+        case 0: return 0; break;
         case 1: strcpy(program[pc].op_code, buf[0]); break;
         case 2:
             if(strlen(buf[0])==3)
@@ -138,12 +167,20 @@ void save_inst(char **buf, int t)
             }//else
             break;
         case 3:
-            strcpy(program[pc].label, buf[0]);
-            strcpy(program[pc].op_code, buf[1]);
-            strcpy(program[pc].end, buf[2]);
+
+            if(strcmp(buf[1], "DC"))
+            {
+                strcpy(program[pc].label, buf[0]);
+                strcpy(program[pc].op_code, buf[1]);
+                strcpy(program[pc].end, buf[2]);
+            }/*else
+            {
+                return 0;
+            }//else*/
             break;
         default: break;
     }//switch
+    return 1;
 }//save_inst()
 
 void save_ref(char **buf, int t)
@@ -161,9 +198,17 @@ void save_ref(char **buf, int t)
             }//if
             break;
         case 3:
-            strcpy(ref_table[ref_pc].label, buf[0]);
-            ref_table[ref_pc].end = pc;
-            ref_pc++;
+            if(!strcmp(buf[1], "DC"))
+            {
+                strcpy(ref_table[ref_pc].label, buf[0]);
+                ref_table[ref_pc].end = pc;
+                ref_pc++;
+            }else
+            {
+                strcpy(ref_table[ref_pc].label, buf[0]);
+                ref_table[ref_pc].end = pc;
+                ref_pc++;
+            }//else
             break;
         default: break;
     }//switch
@@ -189,12 +234,17 @@ void tok_instruction(char *buffer)
         else cnt++;
     }//for
 
+    if(ref_pc==1)
+        puts("");
+
     //printf("%d\n", cnt);
-    save_inst(inst, cnt);
-    save_ref(inst, cnt);
+    if(save_inst(inst, cnt) == 1)
+    {
+        save_ref(inst, cnt);
+        pc++;
+    }else save_ref(inst, cnt);
 
     free(inst);
-    pc++;
 }//tol_instruction()
 
 void str_clean(char *str)
