@@ -27,20 +27,64 @@ void save_inst(char **buf, int t);
 void save_ref(char **buf, int t);
 void str_clean(char *str);
 
-char* code()
+int search_ref_table(char *c)
+{
+    return 0;
+}//search_ref_table()
+
+char* code(char *op)
+{
+    if(!strcmp(op, "LAD"))
+    {
+        return "01";
+    }else if(!strcmp(op, "SAD"))
+    {
+        return "02";
+    }else if(!strcmp(op, "ADD"))
+    {
+        return "03";
+    }else if(!strcmp(op, "SUB"))
+    {
+        return "04";
+    }else if(!strcmp(op, "INP"))
+    {
+        return "05";
+    }else if(!strcmp(op, "OUT"))
+    {
+        return "06";
+    }else if(!strcmp(op, "JMP"))
+    {
+        return "07";
+    }else if(!strcmp(op, "JGZ"))
+    {
+        return "08";
+    }else if(!strcmp(op, "JLZ"))
+    {
+        return "09";
+    }else if(!strcmp(op, "JZE"))
+    {
+        return "10";
+    }else if(!strcmp(op, "HLT"))
+    {
+        return "11";
+    }//else
+}//code()
+
+char* refr(char *r)
 {
     return "a";
-}//
+}//refr()
 
-void write_on_file()
+void write_on_file(FILE *f)
 {
     int i;
     int tam_prog = pc;
     pc = 0;
 
-    for(int i=0; i<tam_prog-1; i++)
+    for(int i=0; i<tam_prog; i++)
     {
-        printf("%s %s %s\n", program[i].label, program[i].op_code, program[i].end);
+        fprintf(f, "%s ", code(program[i].op_code));
+        fprintf(f, "%s", refr(program[i].end));
     }//for
 }//write_on_file()
 
@@ -70,9 +114,11 @@ int main(int argc, char *argv[])
         }//while
 
         //Segunda Passada
-        write_on_file();
+        write_on_file(g);
     }//else
 
+    fclose(f);
+    fclose(g);
 }//main()
 
 void save_inst(char **buf, int t)
