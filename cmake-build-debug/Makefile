@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named assembly
+
+# Build rule for target.
+assembly: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 assembly
+.PHONY : assembly
+
+# fast build rule for target.
+assembly/fast:
+	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/build
+.PHONY : assembly/fast
+
+#=============================================================================
 # Target rules for targets named untitled2
 
 # Build rule for target.
@@ -123,32 +136,62 @@ untitled2/fast:
 	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/build
 .PHONY : untitled2/fast
 
-main.o: main.c.o
+Assembly/assembler.o: Assembly/assembler.c.o
 
-.PHONY : main.o
+.PHONY : Assembly/assembler.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/main.c.o
-.PHONY : main.c.o
+Assembly/assembler.c.o:
+	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/Assembly/assembler.c.o
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Assembly/assembler.c.o
+.PHONY : Assembly/assembler.c.o
 
-main.i: main.c.i
+Assembly/assembler.i: Assembly/assembler.c.i
 
-.PHONY : main.i
+.PHONY : Assembly/assembler.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/main.c.i
-.PHONY : main.c.i
+Assembly/assembler.c.i:
+	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/Assembly/assembler.c.i
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Assembly/assembler.c.i
+.PHONY : Assembly/assembler.c.i
 
-main.s: main.c.s
+Assembly/assembler.s: Assembly/assembler.c.s
 
-.PHONY : main.s
+.PHONY : Assembly/assembler.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/main.c.s
-.PHONY : main.c.s
+Assembly/assembler.c.s:
+	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/Assembly/assembler.c.s
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Assembly/assembler.c.s
+.PHONY : Assembly/assembler.c.s
+
+Simulator/simulator.o: Simulator/simulator.c.o
+
+.PHONY : Simulator/simulator.o
+
+# target to build an object file
+Simulator/simulator.c.o:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Simulator/simulator.c.o
+.PHONY : Simulator/simulator.c.o
+
+Simulator/simulator.i: Simulator/simulator.c.i
+
+.PHONY : Simulator/simulator.i
+
+# target to preprocess a source file
+Simulator/simulator.c.i:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Simulator/simulator.c.i
+.PHONY : Simulator/simulator.c.i
+
+Simulator/simulator.s: Simulator/simulator.c.s
+
+.PHONY : Simulator/simulator.s
+
+# target to generate assembly for a file
+Simulator/simulator.c.s:
+	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Simulator/simulator.c.s
+.PHONY : Simulator/simulator.c.s
 
 # Help Target
 help:
@@ -158,10 +201,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... assembly"
 	@echo "... untitled2"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Assembly/assembler.o"
+	@echo "... Assembly/assembler.i"
+	@echo "... Assembly/assembler.s"
+	@echo "... Simulator/simulator.o"
+	@echo "... Simulator/simulator.i"
+	@echo "... Simulator/simulator.s"
 .PHONY : help
 
 
