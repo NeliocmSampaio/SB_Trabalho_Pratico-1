@@ -275,7 +275,7 @@ void tok_instruction(char *buffer)
         else cnt++;
     }//for
 
-    //printf("%d\n", cnt);https://www.youtube.com/watch?v=oSPwehOcZtQ&pbjreload=10
+    //printf("%d\n", cnt);
     /*if(save_inst(inst, cnt) == 1)
     {*/
         save_inst(inst, cnt);
