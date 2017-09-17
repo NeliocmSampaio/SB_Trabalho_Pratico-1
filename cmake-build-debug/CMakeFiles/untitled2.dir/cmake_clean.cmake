@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/untitled2.dir/main.c.o"
-  "CMakeFiles/untitled2.dir/binary_writer.c.o"
+  "CMakeFiles/untitled2.dir/Simulator/simulator.c.o"
+  "CMakeFiles/untitled2.dir/Assembly/assembler.c.o"
   "untitled2.pdb"
   "untitled2"
 )
