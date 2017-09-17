@@ -25,6 +25,7 @@ ref ref_table[250];
 int ref_pc;
 //Auxiliar
 char isHalt;
+char isDC;
 
 void tok_instruction(char *buffer);
 void save_ref(char **buf, int t);
@@ -83,6 +84,10 @@ char* code(char *op)
     {
         isHalt = 1;
         return "11";
+    }else if(!strcmp(op, "DC"))
+    {
+        isDC = 1;
+        return "0";
     }else return "00";
 }//code()
 
@@ -92,12 +97,15 @@ char* refr(char *r)
     sprintf(str, "%2d", search_ref_table(r));
 
     int aux = atoi(str);
-    if(!isHalt)
-        sprintf(str, "%2d", (aux) - ((2*pc)+2));
-    else
-    {
+    if(isHalt) {
         sprintf(str, "00");
         isHalt = 0;
+    }else if(isDC)
+    {
+        sprintf(str, "");
+    }else
+    {
+        sprintf(str, "%2d", (aux) - ((2*pc)+2));
     }//else
 
     int i=0;
@@ -121,8 +129,10 @@ void write_on_file(FILE *f)
     {
         if(pc>0) fprintf(f, "\n");
 
-        fprintf(f, "%s ", code(program[pc].op_code));
+        fprintf(f, "%s", code(program[pc].op_code));
         str = refr(program[pc].end);
+        if(!isDC)fprintf(f, " ");
+        else isDC = 0;
         fprintf(f, "%s", str);
         free(str);
     }//for
@@ -137,6 +147,7 @@ int main(int argc, char *argv[])
     end_mem = 0;
     ref_pc = 0;
     isHalt = 0;
+    isDC = 0;
 
     if(argc != 3)
     {
@@ -197,9 +208,9 @@ int save_inst(char **buf, int t)
                 //end_mem+=2;
             }else
             {
-                /*strcpy(program[pc].label, buf[0]);
+                strcpy(program[pc].label, buf[0]);
                 strcpy(program[pc].op_code, buf[1]);
-                strcpy(program[pc].end, buf[2]);*/
+                strcpy(program[pc].end, buf[2]);
                 //end_mem++;
                 return 0;
             }//else
@@ -265,11 +276,12 @@ void tok_instruction(char *buffer)
     }//for
 
     //printf("%d\n", cnt);https://www.youtube.com/watch?v=oSPwehOcZtQ&pbjreload=10
-    if(save_inst(inst, cnt) == 1)
-    {
+    /*if(save_inst(inst, cnt) == 1)
+    {*/
+        save_inst(inst, cnt);
         save_ref(inst, cnt);
-        tam_program++;
-    }else save_ref(inst, cnt);
+        if(strcmp(buffer, "END")) tam_program++;
+    /*}else save_ref(inst, cnt);*/
     pc++;
 
     free(inst);
