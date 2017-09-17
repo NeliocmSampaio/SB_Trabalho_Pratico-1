@@ -18,9 +18,13 @@ typedef struct ref{
 //Programa
 instruction program[250];
 int pc;
+int end_mem;
+int tam_program;
 //tabela de referencia
 ref ref_table[250];
 int ref_pc;
+//Auxiliar
+char isHalt;
 
 void tok_instruction(char *buffer);
 void save_ref(char **buf, int t);
@@ -40,7 +44,7 @@ int search_ref_table(char *c)
     }//while
 
     //puts("Referencia nao encontrada!");
-    return 0;
+    return 2;
 }//search_ref_table()
 
 char* code(char *op)
@@ -77,6 +81,7 @@ char* code(char *op)
         return "10";
     }else if(!strcmp(op, "HLT"))
     {
+        isHalt = 1;
         return "11";
     }else return "00";
 }//code()
@@ -85,6 +90,15 @@ char* refr(char *r)
 {
     char *str = (char*) malloc(sizeof(str)*5);
     sprintf(str, "%2d", search_ref_table(r));
+
+    int aux = atoi(str);
+    if(!isHalt)
+        sprintf(str, "%2d", (aux) - ((2*pc)+2));
+    else
+    {
+        sprintf(str, "00");
+        isHalt = 0;
+    }//else
 
     int i=0;
     while(i<5 && str[i]!='\0')
@@ -99,15 +113,17 @@ char* refr(char *r)
 void write_on_file(FILE *f)
 {
     int i;
-    int tam_prog = pc;
+    int tam_prog = tam_program;
     char *str;
     pc = 0;
 
-    for(int i=0; i<tam_prog; i++)
+    for(pc=0; pc<tam_prog; pc++)
     {
-        fprintf(f, "%s ", code(program[i].op_code));
-        str = refr(program[i].end);
-        fprintf(f, "%s\n", str);
+        if(pc>0) fprintf(f, "\n");
+
+        fprintf(f, "%s ", code(program[pc].op_code));
+        str = refr(program[pc].end);
+        fprintf(f, "%s", str);
         free(str);
     }//for
 }//write_on_file()
@@ -116,6 +132,11 @@ int main(int argc, char *argv[])
 {
     FILE *f, *g;
     char buffer[50];
+
+    pc = 0;
+    end_mem = 0;
+    ref_pc = 0;
+    isHalt = 0;
 
     if(argc != 3)
     {
@@ -173,13 +194,19 @@ int save_inst(char **buf, int t)
                 strcpy(program[pc].label, buf[0]);
                 strcpy(program[pc].op_code, buf[1]);
                 strcpy(program[pc].end, buf[2]);
-            }/*else
+                //end_mem+=2;
+            }else
             {
+                /*strcpy(program[pc].label, buf[0]);
+                strcpy(program[pc].op_code, buf[1]);
+                strcpy(program[pc].end, buf[2]);*/
+                //end_mem++;
                 return 0;
-            }//else*/
+            }//else
             break;
         default: break;
     }//switch
+    //end_mem+=2;
     return 1;
 }//save_inst()
 
@@ -188,26 +215,29 @@ void save_ref(char **buf, int t)
     switch (t)
     {
         case 0: return; break;
-        case 1: return; break;
+        case 1: end_mem+=2; return; break;
         case 2:
             if(strlen(buf[0])==1)
             {
                 strcpy(ref_table[ref_pc].label, buf[0]);
                 ref_table[ref_pc].end = pc;
                 ref_pc++;
-            }//if
+                end_mem+=2;
+            }else end_mem+=2;
             break;
         case 3:
             if(!strcmp(buf[1], "DC"))
             {
                 strcpy(ref_table[ref_pc].label, buf[0]);
-                ref_table[ref_pc].end = pc;
+                ref_table[ref_pc].end = end_mem;
                 ref_pc++;
+                end_mem++;
             }else
             {
                 strcpy(ref_table[ref_pc].label, buf[0]);
-                ref_table[ref_pc].end = pc;
+                ref_table[ref_pc].end = end_mem;
                 ref_pc++;
+                end_mem += 2;
             }//else
             break;
         default: break;
@@ -234,15 +264,13 @@ void tok_instruction(char *buffer)
         else cnt++;
     }//for
 
-    if(ref_pc==1)
-        puts("");
-
-    //printf("%d\n", cnt);
+    //printf("%d\n", cnt);https://www.youtube.com/watch?v=oSPwehOcZtQ&pbjreload=10
     if(save_inst(inst, cnt) == 1)
     {
         save_ref(inst, cnt);
-        pc++;
+        tam_program++;
     }else save_ref(inst, cnt);
+    pc++;
 
     free(inst);
 }//tol_instruction()
