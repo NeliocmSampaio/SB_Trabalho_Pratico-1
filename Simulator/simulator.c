@@ -26,6 +26,8 @@ void byte2bits(char c, char *s);        //conversão de char para binario
 void print_str_tam(char *str, int n);   //imprime tantos caracteres a partir do endereco recebido.
 void print_inst(int i);                 //imprime a instrucao na posicao i
 void cpy_tam(char *dest, char *src, int t);
+void cleanstr(char *str, int tam);
+void convbuffer(char *buf, int sizeb, int x);      //converte um inteiro no buffer para ler instruçoes.
 
 //funções do processador
 void print_memory_contents()
@@ -88,7 +90,8 @@ int run_program2(int program_size)
     int ac = 0;
     int op_code;
     int ref;
-    char op[3], rf[3];
+    int endereco;
+    char op[3], rf[3], aux[20];
     //unsigned char reg[16], fb, sb;
     //char fb1[8], sb1[8];
     //char aux1[8], aux2[8];
@@ -103,9 +106,39 @@ int run_program2(int program_size)
         op_code = atoi(op);
         ref = atoi(rf);
 
-        printf("%d %d\n", op_code, ref);
+        //printf("%d %d\n", op_code, ref);
 
         pc++;
+
+        switch(op_code)
+        {
+            case 1:
+                endereco = (ref+(pc*2))/2;
+                if((ref+(pc*2))%2 != 0)
+                {
+                    endereco++;
+                }//if
+                cpy_tam(aux, program[endereco].first_byte, 4);
+                ac = atoi(aux);
+                break;
+            case 2:
+                endereco = (ref+(pc*2))/2;
+                if((ref+(pc*2))%2 != 0)
+                {
+                    endereco++;
+                }//if
+                break;
+            case 3: break;
+            case 4: break;
+            case 5: break;
+            case 6: break;
+            case 7: break;
+            case 8: break;
+            case 9: break;
+            case 10: break;
+            case 11: break;
+            default: return -1;
+        }//switch
 
         /*switch (fb >> 4)
         {
@@ -146,6 +179,7 @@ void printProgram()
     int i;
     for(i=0; i<tam_program; i++)
     {
+        printf("%d:\t", i*2);
         print_str_tam(&(program[i].first_byte), 2);
         print_str_tam(&(program[i].second_byte), 2);
         //printf("%s", &(program[i].first_byte)/*, &(program[i].second_byte)*/);
@@ -156,10 +190,13 @@ void printProgram()
 
 void readProgram(FILE *f)
 {
+    int aux;
     char buffer[7], *pointer, inst[7];
     while(fgets(buffer, sizeof(buffer), f) != NULL)
     {
         tam_program++;
+        aux = atoi(buffer);
+        //convbuffer(buffer, 4, aux);
         //printf("%s", buffer);
         pointer = strtok(buffer, " ");
         strcpy(inst, pointer);
@@ -176,6 +213,8 @@ void readProgram(FILE *f)
             strcpy(program[load_position].second_byte, "00");
             program[load_position].first_byte[1] = '0';
         }
+        cleanstr(program[load_position].first_byte, 4);
+        //cleanstr(program[load_position].second_byte, 2);
         load_position++;
     }//while
 }//readProgram()
@@ -193,7 +232,7 @@ int main(int argc, char *argv[]) {
     }//if
 
     readProgram(f);
-    //printProgram();
+    printProgram();
 
     int t = tam_program;/* = fread(program, 1, sizeof(program), f);
     //printf("%d\n", t);*/
@@ -245,5 +284,27 @@ void cpy_tam(char *dest, char *src, int t)
     {
         dest[i] = src[i];
     }//for
-    src[i] = '\0';
+    dest[i] = '\0';
 }//cpy_tam()
+
+void cleanstr(char *str, int tam)
+{
+    int i;
+    for (i=0; i<tam; i++)
+    {
+        if(str[i]=='\n' || str[i]=='\0')
+        {
+            str[i] = '0';
+        }//if
+    }//for
+}
+
+void convbuffer(char *buf, int sizeb, int x)
+{
+    char aux[sizeb];
+    while(x%10>=10)
+    {
+        aux[sizeb] = x%10;
+        x = x/10;
+    }
+}

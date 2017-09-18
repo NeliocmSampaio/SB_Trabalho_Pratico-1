@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/Simulator/simulator.c" "/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/CMakeFiles/simulator.dir/Simulator/simulator.c.o"
+  "/home/nelio/ClionProjects/SB_TrabalhoPratico_1/Simulator/simulator.c" "/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles/simulator.dir/Simulator/simulator.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug"/>
+				<Option working_dir="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug"/>
+				<Option working_dir="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug"/>
+				<Option working_dir="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="assembly">
-				<Option output="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/assembly" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug"/>
+				<Option output="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/assembly" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 assembly"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 assembly"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="assembly/fast">
-				<Option output="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/assembly" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug"/>
+				<Option output="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/assembly" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,15 +77,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 assembly/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 assembly/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="simulator">
-				<Option output="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/simulator" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug"/>
+				<Option output="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/simulator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -100,15 +100,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 simulator"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 simulator"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="simulator/fast">
-				<Option output="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/simulator" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug"/>
+				<Option output="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/simulator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -123,20 +123,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 simulator/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 simulator/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/Assembly/assembler.c">
+		<Unit filename="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/Assembly/assembler.c">
 			<Option target="assembly"/>
 		</Unit>
-		<Unit filename="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/Simulator/simulator.c">
+		<Unit filename="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/Simulator/simulator.c">
 			<Option target="simulator"/>
 		</Unit>
-		<Unit filename="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/CMakeLists.txt">
+		<Unit filename="/home/nelio/ClionProjects/SB_TrabalhoPratico_1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

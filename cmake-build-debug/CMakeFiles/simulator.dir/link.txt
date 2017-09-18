@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/simulator.dir/Simulator/simulator.c.o  -o simulator 
+/usr/bin/cc  -g   CMakeFiles/simulator.dir/Simulator/simulator.c.o  -o simulator 
