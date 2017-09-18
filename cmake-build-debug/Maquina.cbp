@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6"/>
 	<Project>
-		<Option title="untitled2"/>
+		<Option title="Maquina"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
@@ -132,6 +132,7 @@
 		</Build>
 		<Unit filename="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/Assembly/assembler.c">
 			<Option target="assembly"/>
+			<Option target="simulator"/>
 		</Unit>
 		<Unit filename="/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/Simulator/simulator.c">
 			<Option target="simulator"/>

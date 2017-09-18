@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/Simulator/simulator.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+

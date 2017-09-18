@@ -124,17 +124,17 @@ assembly/fast:
 .PHONY : assembly/fast
 
 #=============================================================================
-# Target rules for targets named untitled2
+# Target rules for targets named simulator
 
 # Build rule for target.
-untitled2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 untitled2
-.PHONY : untitled2
+simulator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simulator
+.PHONY : simulator
 
 # fast build rule for target.
-untitled2/fast:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/build
-.PHONY : untitled2/fast
+simulator/fast:
+	$(MAKE) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/build
+.PHONY : simulator/fast
 
 Assembly/assembler.o: Assembly/assembler.c.o
 
@@ -143,7 +143,6 @@ Assembly/assembler.o: Assembly/assembler.c.o
 # target to build an object file
 Assembly/assembler.c.o:
 	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/Assembly/assembler.c.o
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Assembly/assembler.c.o
 .PHONY : Assembly/assembler.c.o
 
 Assembly/assembler.i: Assembly/assembler.c.i
@@ -153,7 +152,6 @@ Assembly/assembler.i: Assembly/assembler.c.i
 # target to preprocess a source file
 Assembly/assembler.c.i:
 	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/Assembly/assembler.c.i
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Assembly/assembler.c.i
 .PHONY : Assembly/assembler.c.i
 
 Assembly/assembler.s: Assembly/assembler.c.s
@@ -163,7 +161,6 @@ Assembly/assembler.s: Assembly/assembler.c.s
 # target to generate assembly for a file
 Assembly/assembler.c.s:
 	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/Assembly/assembler.c.s
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Assembly/assembler.c.s
 .PHONY : Assembly/assembler.c.s
 
 Simulator/simulator.o: Simulator/simulator.c.o
@@ -172,7 +169,7 @@ Simulator/simulator.o: Simulator/simulator.c.o
 
 # target to build an object file
 Simulator/simulator.c.o:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Simulator/simulator.c.o
+	$(MAKE) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/Simulator/simulator.c.o
 .PHONY : Simulator/simulator.c.o
 
 Simulator/simulator.i: Simulator/simulator.c.i
@@ -181,7 +178,7 @@ Simulator/simulator.i: Simulator/simulator.c.i
 
 # target to preprocess a source file
 Simulator/simulator.c.i:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Simulator/simulator.c.i
+	$(MAKE) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/Simulator/simulator.c.i
 .PHONY : Simulator/simulator.c.i
 
 Simulator/simulator.s: Simulator/simulator.c.s
@@ -190,7 +187,7 @@ Simulator/simulator.s: Simulator/simulator.c.s
 
 # target to generate assembly for a file
 Simulator/simulator.c.s:
-	$(MAKE) -f CMakeFiles/untitled2.dir/build.make CMakeFiles/untitled2.dir/Simulator/simulator.c.s
+	$(MAKE) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/Simulator/simulator.c.s
 .PHONY : Simulator/simulator.c.s
 
 # Help Target
@@ -202,7 +199,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... assembly"
-	@echo "... untitled2"
+	@echo "... simulator"
 	@echo "... Assembly/assembler.o"
 	@echo "... Assembly/assembler.i"
 	@echo "... Assembly/assembler.s"
