@@ -10,3 +10,9 @@ JGZ
 JLZ
 JZE
 HLT
+
+endereco = (ref+(pc));
+/*if((ref+(pc*2))%2 != 0)
+{
+    endereco++;
+}//if*/

@@ -13,4 +13,8 @@ string.h
 -
 stdlib.h
 -
+limits.h
+-
+math.h
+-
 
