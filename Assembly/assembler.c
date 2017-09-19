@@ -88,6 +88,26 @@ char* code(char *op)
     {
         isDC = 1;
         return "0";
+    }else if(!strcmp(op, "LXD"))
+    {
+        return "12";
+    }else if(!strcmp(op, "SXD"))
+    {
+        return "13";
+    }else if(!strcmp(op, "LAX"))
+    {
+        isHalt = 1;
+        return "14";
+    }else if(!strcmp(op, "SAX"))
+    {
+        isHalt = 1;
+        return "15";
+    }else if(!strcmp(op, "LCD"))
+    {
+        return "16";
+    }else if(!strcmp(op, "JCC"))
+    {
+        return "17";
     }else return "00";
 }//code()
 

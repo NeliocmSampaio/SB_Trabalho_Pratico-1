@@ -49,7 +49,7 @@ void print_memory_contents()
 int run_program2(int program_size)
 {
     int pc = 0;
-    int ac = 0;
+    int ac = 0, rc = 0, rx = 0;
     int op_code;
     int ref;
     int endereco, in, out;
@@ -81,7 +81,7 @@ int run_program2(int program_size)
                 ac = atoi(aux);
                 break;
             case 2:
-                ac = 1;
+                //ac = 1;
                 endereco = (ref+(pc));
                 sprintf(program[endereco].byte, "%d", ac);
                 break;
@@ -132,6 +132,60 @@ int run_program2(int program_size)
                 break;
             case 11:
                 return 0;
+                break;
+            case 12:
+                endereco = (ref+(pc));
+                cpy_tam(aux, program[endereco].byte, 4);
+                //char2int(&ac, aux);
+                rx = atoi(aux);
+                break;
+            case 13:
+                endereco = (ref+(pc));
+                sprintf(program[endereco].byte, "%d", rx);
+                break;
+            case 14:
+                endereco = (rx+(pc));
+                rx++;
+                cpy_tam(aux, program[endereco].byte, 4);
+                //char2int(&ac, aux);
+                ac = atoi(aux);
+                break;
+            case 15:
+                endereco = (rx+(pc));
+                sprintf(program[endereco].byte, "%d", ac);
+                break;
+            case 16:
+                endereco = (ref+(pc));
+                cpy_tam(aux, program[endereco].byte, 4);
+                rc = atoi(aux);
+                break;
+            case 17:
+                rc--;
+                if(rc>0)
+                {
+                    endereco = (ref+(pc));
+                    pc = endereco;
+                }//if
+                break;
+            case 18:
+                rx = pc;
+                endereco = (ref+(pc));
+                pc = endereco;
+                break;
+            case 19:
+                pc = rx;
+                break;
+            case 20:
+                endereco = (rx+(pc));
+                cpy_tam(aux, program[endereco].byte, 4);
+                cpy_tam(aux, program[atoi(aux)].byte, 4);
+                rx++;
+                ac = atoi(aux);
+                break;
+            case 21:
+                endereco = (rx+(pc));
+                cpy_tam(aux, program[endereco].byte, 4);
+                sprintf(program[atoi(aux)].byte, "%d", ac);
                 break;
             default: return -1;
         }//switch
