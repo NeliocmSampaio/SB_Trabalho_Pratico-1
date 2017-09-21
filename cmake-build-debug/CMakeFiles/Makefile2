@@ -60,39 +60,76 @@ CMAKE_SOURCE_DIR = /home/nelio/ClionProjects/SB_TrabalhoPratico_1
 CMAKE_BINARY_DIR = /home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/assembly.dir
+# Target rules for target CMakeFiles/linker.dir
 
 # All Build rule for target.
-CMakeFiles/assembly.dir/all:
-	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/depend
-	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target assembly"
-.PHONY : CMakeFiles/assembly.dir/all
+CMakeFiles/linker.dir/all:
+	$(MAKE) -f CMakeFiles/linker.dir/build.make CMakeFiles/linker.dir/depend
+	$(MAKE) -f CMakeFiles/linker.dir/build.make CMakeFiles/linker.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target linker"
+.PHONY : CMakeFiles/linker.dir/all
 
 # Include target in all.
-all: CMakeFiles/assembly.dir/all
+all: CMakeFiles/linker.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/assembly.dir/rule: cmake_check_build_system
+CMakeFiles/linker.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/assembly.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/linker.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/assembly.dir/rule
+.PHONY : CMakeFiles/linker.dir/rule
 
 # Convenience name for target.
-assembly: CMakeFiles/assembly.dir/rule
+linker: CMakeFiles/linker.dir/rule
 
-.PHONY : assembly
-
-# clean rule for target.
-CMakeFiles/assembly.dir/clean:
-	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/clean
-.PHONY : CMakeFiles/assembly.dir/clean
+.PHONY : linker
 
 # clean rule for target.
-clean: CMakeFiles/assembly.dir/clean
+CMakeFiles/linker.dir/clean:
+	$(MAKE) -f CMakeFiles/linker.dir/build.make CMakeFiles/linker.dir/clean
+.PHONY : CMakeFiles/linker.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/linker.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/assembler.dir
+
+# All Build rule for target.
+CMakeFiles/assembler.dir/all:
+	$(MAKE) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/depend
+	$(MAKE) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target assembler"
+.PHONY : CMakeFiles/assembler.dir/all
+
+# Include target in all.
+all: CMakeFiles/assembler.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/assembler.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/assembler.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/assembler.dir/rule
+
+# Convenience name for target.
+assembler: CMakeFiles/assembler.dir/rule
+
+.PHONY : assembler
+
+# clean rule for target.
+CMakeFiles/assembler.dir/clean:
+	$(MAKE) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/clean
+.PHONY : CMakeFiles/assembler.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/assembler.dir/clean
 
 .PHONY : clean
 
@@ -103,7 +140,7 @@ clean: CMakeFiles/assembly.dir/clean
 CMakeFiles/simulator.dir/all:
 	$(MAKE) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/depend
 	$(MAKE) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target simulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target simulator"
 .PHONY : CMakeFiles/simulator.dir/all
 
 # Include target in all.

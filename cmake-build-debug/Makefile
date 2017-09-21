@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-de
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/nelio/Downloads/clion-2017.1/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/nelio/Downloads/clion-2017.1/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named assembly
+# Target rules for targets named linker
 
 # Build rule for target.
-assembly: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 assembly
-.PHONY : assembly
+linker: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 linker
+.PHONY : linker
 
 # fast build rule for target.
-assembly/fast:
-	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/build
-.PHONY : assembly/fast
+linker/fast:
+	$(MAKE) -f CMakeFiles/linker.dir/build.make CMakeFiles/linker.dir/build
+.PHONY : linker/fast
+
+#=============================================================================
+# Target rules for targets named assembler
+
+# Build rule for target.
+assembler: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 assembler
+.PHONY : assembler
+
+# fast build rule for target.
+assembler/fast:
+	$(MAKE) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/build
+.PHONY : assembler/fast
 
 #=============================================================================
 # Target rules for targets named simulator
@@ -142,7 +155,7 @@ Assembly/assembler.o: Assembly/assembler.c.o
 
 # target to build an object file
 Assembly/assembler.c.o:
-	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/Assembly/assembler.c.o
+	$(MAKE) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/Assembly/assembler.c.o
 .PHONY : Assembly/assembler.c.o
 
 Assembly/assembler.i: Assembly/assembler.c.i
@@ -151,7 +164,7 @@ Assembly/assembler.i: Assembly/assembler.c.i
 
 # target to preprocess a source file
 Assembly/assembler.c.i:
-	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/Assembly/assembler.c.i
+	$(MAKE) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/Assembly/assembler.c.i
 .PHONY : Assembly/assembler.c.i
 
 Assembly/assembler.s: Assembly/assembler.c.s
@@ -160,8 +173,35 @@ Assembly/assembler.s: Assembly/assembler.c.s
 
 # target to generate assembly for a file
 Assembly/assembler.c.s:
-	$(MAKE) -f CMakeFiles/assembly.dir/build.make CMakeFiles/assembly.dir/Assembly/assembler.c.s
+	$(MAKE) -f CMakeFiles/assembler.dir/build.make CMakeFiles/assembler.dir/Assembly/assembler.c.s
 .PHONY : Assembly/assembler.c.s
+
+Linker/linker.o: Linker/linker.c.o
+
+.PHONY : Linker/linker.o
+
+# target to build an object file
+Linker/linker.c.o:
+	$(MAKE) -f CMakeFiles/linker.dir/build.make CMakeFiles/linker.dir/Linker/linker.c.o
+.PHONY : Linker/linker.c.o
+
+Linker/linker.i: Linker/linker.c.i
+
+.PHONY : Linker/linker.i
+
+# target to preprocess a source file
+Linker/linker.c.i:
+	$(MAKE) -f CMakeFiles/linker.dir/build.make CMakeFiles/linker.dir/Linker/linker.c.i
+.PHONY : Linker/linker.c.i
+
+Linker/linker.s: Linker/linker.c.s
+
+.PHONY : Linker/linker.s
+
+# target to generate assembly for a file
+Linker/linker.c.s:
+	$(MAKE) -f CMakeFiles/linker.dir/build.make CMakeFiles/linker.dir/Linker/linker.c.s
+.PHONY : Linker/linker.c.s
 
 Simulator/simulator.o: Simulator/simulator.c.o
 
@@ -196,13 +236,17 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... assembly"
+	@echo "... edit_cache"
+	@echo "... linker"
+	@echo "... assembler"
 	@echo "... simulator"
 	@echo "... Assembly/assembler.o"
 	@echo "... Assembly/assembler.i"
 	@echo "... Assembly/assembler.s"
+	@echo "... Linker/linker.o"
+	@echo "... Linker/linker.i"
+	@echo "... Linker/linker.s"
 	@echo "... Simulator/simulator.o"
 	@echo "... Simulator/simulator.i"
 	@echo "... Simulator/simulator.s"
