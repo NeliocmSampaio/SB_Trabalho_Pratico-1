@@ -46,6 +46,11 @@ void print_memory_contents()
     }//for
 }//print_memory_contents()
 
+/*int addres(int pc, int ref)
+{
+    return ref<0 ? pc+ref+2: pc+ref;
+}//endereco()*/
+
 int run_program2(int program_size)
 {
     int pc = 0;
@@ -76,7 +81,7 @@ int run_program2(int program_size)
         {
             case 1:
                 endereco = (ref+(pc));
-                cpy_tam(aux, program[endereco].byte, 4);
+                cpy_tam(aux, program[endereco].byte, 2);
                 //char2int(&ac, aux);
                 ac = atoi(aux);
                 break;
@@ -87,12 +92,12 @@ int run_program2(int program_size)
                 break;
             case 3:
                 endereco = (ref+(pc));
-                cpy_tam(aux, program[endereco].byte, 4);
+                cpy_tam(aux, program[endereco].byte, 2);
                 ac += atoi(aux);
                 break;
             case 4:
                 endereco = (ref+(pc));
-                cpy_tam(aux, program[endereco].byte, 4);
+                cpy_tam(aux, program[endereco].byte, 2);
                 ac -= atoi(aux);
                 break;
             case 5:
@@ -102,7 +107,7 @@ int run_program2(int program_size)
                 break;
             case 6:
                 endereco = (ref+(pc));
-                cpy_tam(aux, program[endereco].byte, 4);
+                cpy_tam(aux, program[endereco].byte, 2);
                 printf("%d", atoi(aux));
                 break;
             case 7:
@@ -135,7 +140,7 @@ int run_program2(int program_size)
                 break;
             case 12:
                 endereco = (ref+(pc));
-                cpy_tam(aux, program[endereco].byte, 4);
+                cpy_tam(aux, program[endereco].byte, 2);
                 //char2int(&ac, aux);
                 rx = atoi(aux);
                 break;
@@ -146,7 +151,7 @@ int run_program2(int program_size)
             case 14:
                 endereco = (rx+(pc));
                 rx++;
-                cpy_tam(aux, program[endereco].byte, 4);
+                cpy_tam(aux, program[endereco].byte, 2);
                 //char2int(&ac, aux);
                 ac = atoi(aux);
                 break;
@@ -156,7 +161,7 @@ int run_program2(int program_size)
                 break;
             case 16:
                 endereco = (ref+(pc));
-                cpy_tam(aux, program[endereco].byte, 4);
+                cpy_tam(aux, program[endereco].byte, 2);
                 rc = atoi(aux);
                 break;
             case 17:
@@ -176,16 +181,20 @@ int run_program2(int program_size)
                 pc = rx;
                 break;
             case 20:
-                endereco = (rx+(pc));
-                cpy_tam(aux, program[endereco].byte, 4);
-                cpy_tam(aux, program[atoi(aux)].byte, 4);
-                rx++;
+                endereco = (rx);
+                //endereco = atoi(program[rx].byte);
+                //endereco = atoi(program[endereco].byte);
+                cpy_tam(aux, program[endereco + 1].byte, 2);
+                cpy_tam(aux, program[atoi(aux)+rx+2].byte, 2);
+                rx+=2;
                 ac = atoi(aux);
                 break;
             case 21:
                 endereco = (rx+(pc));
-                cpy_tam(aux, program[endereco].byte, 4);
+                cpy_tam(aux, program[endereco].byte, 2);
                 sprintf(program[atoi(aux)].byte, "%d", ac);
+                break;
+            case 22:
                 break;
             default: return -1;
         }//switch
@@ -231,6 +240,7 @@ void printProgram()
     {
         printf("%d:\t", i);
         print_str_tam(&(program[i].byte), 2);
+        printf(" ");
         if(i<tam_program)
             print_str_tam(&(program[i+1].byte), 2);
         //printf("%s", &(program[i].first_byte)/*, &(program[i].second_byte)*/);
@@ -242,16 +252,16 @@ void printProgram()
 void readProgram(FILE *f)
 {
     int aux, buf_size;
-    char buffer[7], *pointer, inst[7];
+    char buffer[8], *pointer, inst[8];
     while(fgets(buffer, sizeof(buffer), f) != NULL)
     {
         buf_size = strlen(buffer);
         /*if(strcmp(buffer, "END"))
         {*/
-            if(buf_size == 6)
-            {
+            /*if(buf_size == 6)
+            {*/
                 tam_program+=2;
-            }/*else
+            /*}else
             {
                 tam_program++;
             }//else*/
@@ -275,7 +285,7 @@ void readProgram(FILE *f)
         }
         cleanstr(program[load_position].byte, 4);
         //cleanstr(program[load_position].second_byte, 2);
-        if(buf_size == 6)
+        if(buf_size == 6 || buf_size == 7)
         {
             load_position += 2;
         }else
@@ -283,7 +293,7 @@ void readProgram(FILE *f)
             load_position++;
         }//else
     }//while
-    if(buf_size == 6)
+    if(buf_size == 6 || buf_size == 7)
     {
         tam_program -= 2;
     }else
@@ -311,7 +321,7 @@ int main(int argc, char *argv[]) {
     }//if
 
     readProgram(f);
-    //printProgram();
+    printProgram();
 
     int t = tam_program;/* = fread(program, 1, sizeof(program), f);
     //printf("%d\n", t);*/

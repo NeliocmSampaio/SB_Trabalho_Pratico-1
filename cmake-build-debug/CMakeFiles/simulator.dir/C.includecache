@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/nelio/ClionProjects/SB_TrabalhoPratico_1/Simulator/simulator.c
+/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/Simulator/simulator.c
 stdio.h
 -
 string.h

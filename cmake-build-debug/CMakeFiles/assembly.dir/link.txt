@@ -1,1 +1,0 @@
-/usr/bin/cc  -g   CMakeFiles/assembly.dir/Assembly/assembler.c.o  -o assembly 

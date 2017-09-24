@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/nelio/ClionProjects/SB_TrabalhoPratico_1/Assembly/assembler.c
+/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/Assembly/assembler.c
 stdio.h
 -
 stdlib.h

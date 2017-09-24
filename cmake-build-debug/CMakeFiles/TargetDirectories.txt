@@ -1,5 +1,5 @@
-/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles/linker.dir
-/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles/assembler.dir
-/home/nelio/ClionProjects/SB_TrabalhoPratico_1/cmake-build-debug/CMakeFiles/simulator.dir
+/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/CMakeFiles/linker.dir
+/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/CMakeFiles/assembler.dir
+/home/nelio/ClionProjects/SB_Trabalho_Pratico-1/cmake-build-debug/CMakeFiles/simulator.dir

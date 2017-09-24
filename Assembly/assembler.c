@@ -108,6 +108,21 @@ char* code(char *op)
     }else if(!strcmp(op, "JCC"))
     {
         return "17";
+    }else if(!strcmp(op, "CAL"))
+    {
+      return "18";
+    }else if(!strcmp(op, "RET"))
+    {
+      return "19";
+    }else if(!strcmp(op, "LAI"))
+    {
+      return "20";
+    }else if(!strcmp(op, "SAI"))
+    {
+      return "21";
+    }else if(!strcmp(op, "DA"))
+    {
+        return "22";
     }else return "00";
 }//code()
 
@@ -125,7 +140,12 @@ char* refr(char *r)
         sprintf(str, "");
     }else
     {
-        sprintf(str, "%2d", (aux) - ((2*pc)+2));
+        aux -= ((2*pc));
+        if(aux >= 0)
+        {
+            aux -= 2;
+        }//if
+        sprintf(str, "%2d", (aux));
     }//else
 
     int i=0;
@@ -212,6 +232,10 @@ int save_inst(char **buf, int t)
             {
                 strcpy(program[pc].op_code, buf[0]);
                 strcpy(program[pc].end, buf[1]);
+            }else if(!strcmp("DA", buf[0]))
+            {
+                strcpy(program[pc].op_code, buf[0]);
+                strcpy(program[pc].end, buf[1]);
             }else
             {
                 strcpy(program[pc].label, buf[0]);
@@ -251,7 +275,7 @@ void save_ref(char **buf, int t)
             if(strlen(buf[0])==1)
             {
                 strcpy(ref_table[ref_pc].label, buf[0]);
-                ref_table[ref_pc].end = pc;
+                ref_table[ref_pc].end = end_mem;
                 ref_pc++;
                 end_mem+=2;
             }else end_mem+=2;
@@ -296,7 +320,10 @@ void tok_instruction(char *buffer)
     }//for
 
     //printf("%d\n", cnt);
-    /*if(save_inst(inst, cnt) == 1)
+    /*if(save_inst(inst, cnt) == 1)if(!strcmp(op, "SAI"))
+    {
+      return "21";
+    }else
     {*/
         save_inst(inst, cnt);
         save_ref(inst, cnt);

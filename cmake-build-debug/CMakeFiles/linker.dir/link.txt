@@ -1,1 +1,1 @@
-/usr/bin/cc  -g   CMakeFiles/linker.dir/Linker/linker.c.o  -o linker 
+/usr/bin/cc -g   CMakeFiles/linker.dir/Linker/linker.c.o  -o linker 
